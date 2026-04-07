@@ -1,0 +1,23 @@
+<h2>Drivers List</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of drivers">
+      <td>{{ d.driverId }}</td>
+      <td>{{ d.fullName }}</td>
+      <td>{{ d.phoneNumber }}</td>
+      <td>{{ d.email }}</td>
+      <td>{{ d.status }}</td>
+    </tr>
+  </tbody>
+</table>

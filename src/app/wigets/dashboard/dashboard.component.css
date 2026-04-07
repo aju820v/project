@@ -1,0 +1,15 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 2px 12px 10px rgba(37, 5, 5, 0.1);
+}
+th, td{
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-variant: small-caps;
+    text-align: center;
+}
