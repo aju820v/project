@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DriverService } from '../../services/driver.service';
 import { Observable } from 'rxjs/internal/Observable';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   imports: [CommonModule],
@@ -9,7 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit{
-  constructor(private driverService: DriverService) { }
+  constructor(private driverService: DriverService, 
+              private router: Router
+  ) { }
   drivers: any[] = [];
   pageIndex = 1;
   pageSize = 5;
@@ -56,4 +59,7 @@ export class DashboardComponent implements OnInit{
       this.loadDrivers();
     }
   }
+  goToInvoice() {
+  this.router.navigate(['/invoice-driver']);
+}
 }

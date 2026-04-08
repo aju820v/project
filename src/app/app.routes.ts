@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './wigets/login/login.component';
 import { DashboardComponent } from './wigets/dashboard/dashboard.component';
 import { LayoutComponent } from './wigets/layout/layout.component';
+import { InvoiceComponent } from './wigets/invoice/invoice.component';
 
 export const routes: Routes = [
 
@@ -13,6 +14,7 @@ export const routes: Routes = [
     path: '',component: LayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'invoice-driver', component: InvoiceComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

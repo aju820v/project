@@ -1,0 +1,43 @@
+<h2>Find Driver by Invoice ID</h2>
+
+<form [formGroup]="form" (ngSubmit)="search()">
+
+  <input 
+    type="number" 
+    formControlName="invoiceId"
+    placeholder="Enter Invoice ID"
+  />
+
+  <button type="submit">Search</button>
+
+</form>
+
+<!-- Validation -->
+<div *ngIf="form.controls['invoiceId'].invalid && form.touched" style="color:red;">
+  Invoice ID is required
+</div>
+
+<!-- Loading -->
+<div *ngIf="loading">Loading...</div>
+
+<!-- Error -->
+<div *ngIf="errorMsg" style="color:red;">
+  {{ errorMsg }}
+</div>
+
+<!-- Table -->
+<table border="1" *ngIf="driverData">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+  <tr>
+    <td>{{ driverData.driverId }}</td>
+    <td>{{ driverData.fullName }}</td>
+    <td>{{ driverData.email }}</td>
+    <td>{{ driverData.phoneNumber }}</td>
+  </tr>
+</table>
