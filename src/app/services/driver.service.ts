@@ -5,17 +5,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DriverService {
+  apiUrl = 'https://common.stoccoz.com/api/v1/Driver';
 
-  apiUrl = 'https://common.stoccoz.com/api/v1/Driver?pageIndx=1&pageSize=11&orderBy=ASC&orderByName=full_name';
   constructor(private http: HttpClient) { }
-  getDrivers() {
+//pagination is to be implemented, for that we use query parameters pageIndex and pageSize, 
+
+  getDrivers(pageIndex: number, pageSize: number) {
 
   const params = new HttpParams()
-    .set('pageIndex', 1)
-    .set('pageSize', 11)
+    .set('pageIndex', pageIndex) 
+    .set('pageSize', pageSize)
     .set('orderBy', 'ASC')
     .set('orderByName', 'full_name');
 
-  return this.http.get(this.apiUrl, { params });
+  return this.http.get<any[]>(this.apiUrl, { params });
 }
 }

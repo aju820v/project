@@ -11,15 +11,49 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit{
   constructor(private driverService: DriverService) { }
   drivers: any[] = [];
+  pageIndex = 1;
+  pageSize = 5;
+  totalCount = 0;
+  totalPages = 0;
   ngOnInit() {
-    this.driverService.getDrivers().subscribe({
-      next: (res: any) => {
-        this.drivers = res;
-        console.log('Druivers: ', res);
-    },
-      error: (err) => {
-        console.error('Error fetching drivers:', err);
-      } 
+    // this.driverService.getDrivers().subscribe({
+    //   next: (res: any) => {
+    //     this.drivers = res;
+    //     console.log('Druivers: ', res);
+    // },
+    //   error: (err) => {
+    //     console.error('Error fetching drivers:', err);
+    //   } 
+    // });
+    
+    
+  this.loadDrivers();
+
+  }
+  loadDrivers() {
+  this.driverService.getDrivers(this.pageIndex, this.pageSize)
+    .subscribe((res: any[]) => {
+
+      this.drivers = res;
+      if (res.length > 0) {
+        this.totalCount = res[0].totalRecords;
+      } else {
+        this.totalCount = 0;
+      }
+
+      this.totalPages = Math.ceil(this.totalCount / this.pageSize);
     });
+  }
+  nextPage() {
+    if(this.pageIndex < this.totalPages){
+      this.pageIndex++;
+      this.loadDrivers();
+    }
+  }
+  prevPage() {
+    if(this.pageIndex > 1){
+      this.pageIndex--;
+      this.loadDrivers();
+    }
   }
 }

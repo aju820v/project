@@ -2,6 +2,7 @@ table{
     width: 100%;
     border-collapse: collapse;
     box-shadow: 2px 12px 10px rgba(37, 5, 5, 0.1);
+    border-radius: 10px;
 }
 th, td{
     padding: 10px;
