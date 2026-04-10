@@ -1,0 +1,75 @@
+.header {
+  background: #020617;
+  color: #22c55e;
+  padding: 15px 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.app-wrapper {
+  display: flex;
+}
+
+.side-menu {
+  width: 260px;
+  background: #0f172a;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  left: -260px;
+  top: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.toggle-strip {
+  position: absolute;
+  right: -40px;
+  top: 20px;
+  background: #0f172a;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 20px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+@media (min-width: 768px) {
+  .side-menu {
+    left: 0;
+  }
+
+  .toggle-strip {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 260px;
+  }
+}

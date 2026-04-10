@@ -1,0 +1,35 @@
+.menu {
+  padding: 20px;
+}
+
+.menu h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* LINKS */
+.menu a {
+  display: block;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* HOVER */
+.menu a:hover {
+  background: #1e293b;
+  transform: translateX(5px);
+}
+
+/* ACTIVE LINK */
+.active-link {
+  background: #22c55e;
+  color: #000;
+  font-weight: bold;
+}

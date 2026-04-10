@@ -1,0 +1,37 @@
+<h2>Drivers List</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of drivers">
+      <td>{{ d.driverId }}</td>
+      <td>{{ d.fullName }}</td>
+      <td>{{ d.phoneNumber }}</td>
+      <td>{{ d.email }}</td>
+      <td>{{ d.status }}</td>
+      <td>
+        <button (click)="viewDriver(d)">view</button></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<button (click)="prevPage()" [disabled]="pageIndex === 1">
+  Previous
+</button>
+
+<span> Page {{ pageIndex }} of {{ totalPages }} </span>
+
+<button (click)="nextPage()" [disabled]="pageIndex === totalPages">
+  Next
+</button>

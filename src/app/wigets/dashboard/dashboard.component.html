@@ -1,36 +1,25 @@
-<h2>Drivers List</h2>
+<main>
+  <div class="header">
+    <h2>Dashboard</h2>
+    <p class="desc">Welcome to the dashboard! Here you can find an overview of your application.</p>
+  </div>
+<div class="stats">
+  <div class="card">
+    <h3>Total Drivers</h3>
+    <p>23</p>
+  </div>
+  <div class="card">
+    <h3>Total Invoices</h3>
+    <p>5123</p>
+  </div>  
+  <div class="card">
+    <h3>Active Drivers</h3>
+    <p>18</p>
+  </div>
+  <div class="card">
+    <h3>Pending Invoices</h3>
+    <p>45</p>
+  </div>
 
-<table border="1" cellpadding="8">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let d of drivers">
-      <td>{{ d.driverId }}</td>
-      <td>{{ d.fullName }}</td>
-      <td>{{ d.phoneNumber }}</td>
-      <td>{{ d.email }}</td>
-      <td>{{ d.status }}</td>
-    </tr>
-  </tbody>
-</table>
-<br>
-
-<button (click)="prevPage()" [disabled]="pageIndex === 1">
-  Previous
-</button>
-
-<span> Page {{ pageIndex }} of {{ totalPages }} </span>
-
-<button (click)="nextPage()" [disabled]="pageIndex === totalPages">
-  Next
-</button>
-<br>
-<button (click)="goToInvoice()">Go to Invoice Page</button>
+</div>
+</main>

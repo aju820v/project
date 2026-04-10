@@ -3,6 +3,7 @@ import { LoginComponent } from './wigets/login/login.component';
 import { DashboardComponent } from './wigets/dashboard/dashboard.component';
 import { LayoutComponent } from './wigets/layout/layout.component';
 import { InvoiceComponent } from './wigets/invoice/invoice.component';
+import { DriversComponent } from './wigets/drivers/drivers.component';
 
 export const routes: Routes = [
 
@@ -14,7 +15,8 @@ export const routes: Routes = [
     path: '',component: LayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'invoice-driver', component: InvoiceComponent },
+      { path: 'invoices', component: InvoiceComponent },
+      { path: 'drivers', component: DriversComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

@@ -1,4 +1,5 @@
-<h2>Find Driver by Invoice ID</h2>
+<div  class="hey">
+    <h2>Find Driver by Invoice ID</h2>
 
 <form [formGroup]="form" (ngSubmit)="search()">
 
@@ -8,10 +9,11 @@
     placeholder="Enter Invoice ID"
   />
 
-  <button type="submit">Search</button>
-
+  <button type="submit">Search </button>
+  <br>
+  <br>
 </form>
-
+</div>
 <!-- Validation -->
 <div *ngIf="form.controls['invoiceId'].invalid && form.touched" style="color:red;">
   Invoice ID is required
@@ -24,7 +26,7 @@
 <div *ngIf="errorMsg" style="color:red;">
   {{ errorMsg }}
 </div>
-
+<div class="tbl">
 <!-- Table -->
 <table border="1" *ngIf="driverData">
   <tr>
@@ -41,3 +43,4 @@
     <td>{{ driverData.phoneNumber }}</td>
   </tr>
 </table>
+</div>

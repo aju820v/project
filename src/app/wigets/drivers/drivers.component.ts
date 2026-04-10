@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { DriverService } from '../../services/driver.service';
-import { Observable } from 'rxjs/internal/Observable';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-drivers',
   imports: [CommonModule],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  templateUrl: './drivers.component.html',
+  styleUrl: './drivers.component.css'
 })
-export class DashboardComponent implements OnInit{
+export class DriversComponent  implements OnInit{
+
+
   constructor(private driverService: DriverService, 
               private router: Router
   ) { }
-  drivers: any[] = [];
+    drivers: any[] = [];
   pageIndex = 1;
   pageSize = 5;
   totalCount = 0;
@@ -48,7 +50,7 @@ export class DashboardComponent implements OnInit{
       this.loadDrivers();
     }
   }
-  goToInvoice() {
-  this.router.navigate(['/invoice-driver']);
+  viewDriver(driver: any) {}
+  
 }
-}
+
