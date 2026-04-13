@@ -1,15 +1,18 @@
 <header>
-  <h1>My Application</h1>
+  <button class="menu-btn" (click)="toggleMenu()">☰</button>
+  <h1>My App</h1>
 </header>
 
 <div class="app-wrapper">
 
   <nav class="side-menu" [class.active]="isMenuOpen">
-    <div class="toggle-strip" (click)="toggleMenu()">☰</div>
-    <app-sidemenu (menuClick)="toggleMenu()"></app-sidemenu>
-  </nav>
 
-  <div class="overlay" *ngIf="isMenuOpen" (click)="toggleMenu()"></div>
+    <div class="close-area">
+      <button class="close-btn" (click)="closeMenu()">✖</button>
+    </div>
+
+    <app-sidemenu (menuClick)="closeMenu()"></app-sidemenu>
+  </nav>
 
   <main class="main-content">
     <router-outlet></router-outlet>

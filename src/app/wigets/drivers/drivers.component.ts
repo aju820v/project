@@ -50,7 +50,9 @@ export class DriversComponent  implements OnInit{
       this.loadDrivers();
     }
   }
-  viewDriver(driver: any) {}
+  viewDriver(driver: any) {
+  
+  }
   
 }
 

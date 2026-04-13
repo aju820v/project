@@ -12,7 +12,11 @@ import { CommonModule } from '@angular/common';
 export class LayoutComponent {
   isMenuOpen = false;
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+toggleMenu() {
+  this.isMenuOpen = !this.isMenuOpen;
+}
+
+closeMenu() {
+  this.isMenuOpen = false;
+}
 }

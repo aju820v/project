@@ -11,7 +11,5 @@ import { RouterLink } from '@angular/router';
 export class SidemenuComponent {
   @Output() menuClick = new EventEmitter<void>();
 
-  closeMenu() {
-    this.menuClick.emit();
-  }
+  
 }
