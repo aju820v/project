@@ -5,13 +5,8 @@
 
 <div class="app-wrapper">
 
-  <nav class="side-menu" [class.active]="isMenuOpen">
-
-    <div class="close-area">
-      <button class="close-btn" (click)="closeMenu()">✖</button>
-    </div>
-
-    <app-sidemenu (menuClick)="closeMenu()"></app-sidemenu>
+  <nav class="side-menu" [class.expanded]="isExpanded" [class.mobile-open]="isMenuOpen">
+    <app-sidemenu></app-sidemenu>
   </nav>
 
   <main class="main-content">

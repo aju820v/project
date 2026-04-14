@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './sidemenu.component.css'
 })
 export class SidemenuComponent {
-  @Output() menuClick = new EventEmitter<void>();
+  @Input() expanded = false;
 
   
 }

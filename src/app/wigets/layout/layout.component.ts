@@ -10,13 +10,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './layout.component.css'
 })
 export class LayoutComponent {
+  isExpanded = false;
   isMenuOpen = false;
 
-toggleMenu() {
-  this.isMenuOpen = !this.isMenuOpen;
+  toggleMenu() {
+  if (window.innerWidth <= 768) {
+    this.isMenuOpen = !this.isMenuOpen;
+  } else {
+    this.isExpanded = !this.isExpanded; 
+  }
+}
 }
 
-closeMenu() {
-  this.isMenuOpen = false;
-}
-}

@@ -1,6 +1,19 @@
 <div class="menu">
-  <h4>Menu</h4>
-  <a routerLink="/dashboard" (click)="menuClick.emit()">Dashboard</a>
-  <a routerLink="/drivers" (click)="menuClick.emit()">Drivers</a>
-  <a routerLink="/invoices" (click)="menuClick.emit()">Invoices</a>
+
+  <a routerLink="/dashboard" routerLinkActive="active">
+    <i class="fas fa-home"></i>
+    <span>Dashboard</span>
+  </a>
+
+  <a routerLink="/drivers" routerLinkActive="active">
+    <i class="fas fa-user"></i>
+    <span>Drivers</span>
+  </a>
+
+  <a routerLink="/invoices" routerLinkActive="active">
+    <i class="fas fa-file-invoice"></i>
+    <span>Invoices</span>
+  </a>
+
 </div>
+
